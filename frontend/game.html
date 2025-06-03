@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Lottery Game</h1>
+        <nav>
+            <!-- Links will be populated by JS -->
+        </nav>
+        <div id="user-info" class="user-info">
+            <!-- User info will be populated by JS -->
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Guess the Hidden Coupons!</h2>
+        <p>Click the coupons in the correct sequence to win. Revealing a coupon costs $${CONFIG.costPerGameAttempt}.</p>
+        <p>You need to find ${CONFIG.couponsInWinningSequence} coupons in a row (horizontally, vertically, or diagonally).</p>
+        
+        <button id="start-game-btn">Start New Game ($${CONFIG.costPerGameAttempt} to play)</button>
+        <div id="game-status"></div>
+        <div id="lottery-grid">
+            <!-- Coupons will be generated here by JS -->
+        </div>
+        <div id="message-area"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

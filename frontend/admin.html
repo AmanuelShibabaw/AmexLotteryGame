@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <!-- Links will be populated by JS -->
+        </nav>
+        <div id="user-info" class="user-info">
+            <!-- User info will be populated by JS -->
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>User Support Messages</h2>
+        <div id="admin-message-list">
+            <!-- User messages will be displayed here -->
+        </div>
+        <div id="message-area"></div> <!-- For admin replies feedback -->
+    </div>
+    
+    <!-- Add other admin features here: user management, coupon config etc. -->
+    <!-- Example: User Management Section -->
+    <div class="container">
+        <h2>User Management</h2>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Balance</th>
+                    <th>Spent</th>
+                    <th>Won</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User data will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="config.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .user-info {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 0.9em;
+}
+
+header .user-info span {
+    margin-right: 15px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a, .logout-button, button {
+    color: #fff;
+    background-color: #5cb85c;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+}
+
+nav a:hover, .logout-button:hover, button:hover {
+    background-color: #4cae4c;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Forms */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.form-container input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-container button {
+    background-color: #007bff;
+    color: white;
+}
+.form-container button:hover {
+    background-color: #0056b3;
+}
+.toggle-form {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Lottery Grid */
+#lottery-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size, 5), 1fr); /* Default, will be set by JS */
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 400px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coupon {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border: 2px solid #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    user-select: none;
+}
+
+.coupon:hover {
+    background-color: #ccc;
+}
+
+.coupon.revealed {
+    background-color: #e9e9e9;
+    cursor: default;
+}
+
+.coupon.revealed.correct {
+    background-color: #aeffae; /* Light green for correctly guessed in sequence */
+    border-color: #008000;
+}
+.coupon.revealed.incorrect-in-sequence {
+    background-color: #ffaaaa; /* Light red for breaking sequence */
+    border-color: #8B0000;
+}
+.coupon.revealed.final-win {
+    background-color: gold;
+    border-color: orange;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+/* Chat */
+#chat-messages {
+    height: 300px;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.message {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    max-width: 70%;
+}
+.message.user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    margin-left: auto; /* Pushes user messages to the right */
+}
+.message.admin {
+    background-color: #e0e0e0;
+    align-self: flex-start;
+    margin-right: auto; /* Pushes admin messages to the left */
+}
+.message .sender {
+    font-weight: bold;
+    display: block;
+    font-size: 0.8em;
+    color: #555;
+}
+.message .text {
+    word-wrap: break-word;
+}
+
+#chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+#chat-input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Admin Message View */
+.admin-message-block {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.admin-message-block strong {
+    color: #007bff;
+}
+
+#message-area {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Help Center</h1>
+        <nav>
+            <!-- Links will be populated by JS -->
+        </nav>
+        <div id="user-info" class="user-info">
+            <!-- User info will be populated by JS -->
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Contact Support</h2>
+        <p>If you need help, send us a message below. An admin will review it.</p>
+        
+        <div id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+        <form id="chat-form">
+            <div id="chat-input-area">
+                <input type="text" id="chat-message-input" placeholder="Type your message..." required>
+                <button type="submit">Send</button>
+            </div>
+        </form>
+        <div id="message-area"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
